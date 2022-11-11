@@ -1,0 +1,14 @@
+# openzfs和ldiskfs的区别
+
+## 两套文件底层的区别
+- ldiskfs是采用改了的ext4文件系统
+- openzfs是就是zfs文件系统
+
+两套系统的最核心的区别是ldiskfs自己不带冗余，也就是需要底层的raid来支持
+
+openzfs本身是支持单机上的冗余的，可以自定义冗余的级别
+
+所以在lustre支持了openzfs以后，新的lustre环境采用openzfs进行配置，底层只需要是jbod的就可以，可以省掉raid的成本
+
+目前存在的一个问题是zfs对directio支持不好，directio的性能会很低，这就引起了lustre的对directio的支持不好，这个主要体现在性能方面，在实际使用过程中并不会影响,directio一般也是测试选项
+

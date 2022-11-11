@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'zphj1987',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 4,
+      coverpage: false,
+      search: {
+  	paths: 'auto',
+  	placeholder: '要搜索的关键字',
+  	noData: '没有结果',
+  	depth: 6,
+	     },
+
+pagination: {
+    previousText: '上一章节',
+    // or
+    nextText: {
+      '/': '下一章节'
+    },
+    crossChapter: true,
+    crossChapterText: true,
+  },
+
+
+    }
+  </script>
+
+<!-- Docsify v4 -->
+  <script src="./docsify.4.js"></script>
+  <script src="./search.min.js"></script>
+  <script src="./docsify-pagination.min.js"></script>
+</body>
+</html>
