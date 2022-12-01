@@ -1,5 +1,18 @@
 # os 发布记录
 
+## 2022-12-01 16:00
+AlmaLinux-8-6-x86_64-dvd-lustre-kernel-12011514.iso
+版本说明:
+1、增加kernel-debug包到内核（ludiskfs-dkms需要的包）
+2、增加e2fsprogs包到iso（ludiskfs的补丁包）
+3、修改默认安装模式为Server（安装界面不用动模式了）
+4、提供zfs和ludisk双兼容的相关的包，简化流程
+   zfs 安装6六个包 （先安装）
+   lustre 安装5个包
+
+
+
+
 ## 2022-11-30 17:55
 AlmaLinux-8-6-x86_64-dvd-lustre-kernel-11301755.iso
 版本说明:
