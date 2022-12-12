@@ -9,8 +9,8 @@ osd的数据因为存储的是真实的数据块，所以备份起来需要的�
 ## 备份思路
 有的备份方案需要离线备份数据，这里利用了zfs能够做快照的属性，来进行备份
 - 1、对数据进行快照
-- 2、导出快照
-- 3、恢复快照到新的存储
+- 2、导出快照和元数据
+- 3、恢复快照和元数据到新的存储
 - 4、恢复业务
 日常备份就是操作步骤1和步骤2即可
 
@@ -27,8 +27,8 @@ zfs get -rHp all mgspool > mgspool.mgt.attr
 
 ### 备份zfs的数据
 ```bash
-[root@lab201 ~]# zfs snapshot mgspool/mgt@1
-[root@lab201 ~]# zfs send mgspool/mgt@1 > zfs.mgspool.bk
+[root@test201 ~]# zfs snapshot mgspool/mgt@1
+[root@test201 ~]# zfs send mgspool/mgt@1 > zfs.mgspool.bk
 ```
 
 我们假设现在mgs对应的存储池完全损坏了，我们就当没有这个数据了，然后继续后面的恢复流程
