@@ -35,5 +35,5 @@
  ** [mirror损坏一个ost后如何处理]()
  ** [lustre的zfs出现降级后如何处理]()
  ** [mgs的备份恢复-zfs](operation/zfsmgsbackup)
- ** [mds的备份恢复]()
+ ** [mds的备份恢复](operation/zfsmdsbackup)
 
