@@ -101,7 +101,7 @@ lustre和其它存储有个不同的地方就是，服务的启动是通过挂�
 ```bash
 [root@lab105 ~]# mount -t lustre mgspool/mgt /lustre/mgs/
 ```
-指定完上面的，mgs的服务就创建完毕了,后面创建mds和osd的流程和命令基本类似的，只是参数区别
+执行完上面的，mgs的服务就创建完毕了,后面创建mds和osd的流程和命令基本类似的，只是参数区别
 
 
 ### 配置MDS
