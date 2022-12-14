@@ -42,7 +42,7 @@ genhostid
 
 #### 创建MGS
 ```bash
-[root@test201 ~]# mkfs.lustre --fsname=lustrefs --mgs  --reformat /dev/sdb1
+[root@test201 ~]# mkfs.lustre --fsname=lustrefs --mgs  /dev/sdb1
 
    Permanent disk data:
 Target:     MGS

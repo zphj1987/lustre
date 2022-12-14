@@ -37,4 +37,5 @@
  ** [lustre的zfs出现降级后如何处理]()
  ** [mgs的备份恢复-zfs](operation/zfsmgsbackup)
  ** [mds的备份恢复-zfs](operation/zfsmdsbackup)
-
+ ** [mgs的备份恢复-ldiskfs](operation/ldiskfsmgsbackup.md)
+ ** [mds的备份恢复-ldiskfs](operation/ldiskfsmdsbackup.md)
