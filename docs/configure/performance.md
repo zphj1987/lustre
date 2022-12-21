@@ -1,6 +1,7 @@
 # lustre服务线程调优
-oss/mds的IO服务线程定义，每个服务线程消耗1.5MB的内存资源
+oss/mds的IO服务线程定义，每个服务线程消耗1.5MB的内存资源,Lustre中的许多选项都是通过内核模块参数设置的。这些参数包含在modprobe.conf文件中。
 ## oss服务相关参数
+命令行控制：
 - {service}.threads_min  oss启动后最⼩的服务线程数
 - {service}.threads_max oss启动后最⼤的服务线程数
 - {service}.threads_started oss启动后已经启动的服务线程数
@@ -17,8 +18,13 @@ get相关参数
  lctl get_param ost.OSS.ost.threads_max
 ```  
 
+配置文件控制：
+options ost oss_num_threads={N}
+options ost oss_max_threads={N}
+
 ## mds服务相关参数
 （1）mds服务相关线程参数
+命令行控制：
 - {service}.threads_min  mds启动后最⼩的服务线程数
 - {service}.threads_max mds启动后最⼤的服务线程数
 - {service}.threads_started mds启动后已经启动的服务线程数
@@ -26,6 +32,10 @@ list相关参数
 ```bash
 lctl list_param *.*.*.* |grep threads_*|grep mds
 ```
+配置文件控制：
+options mds mds_num_threads={N}
+options mds mds_max_threads={N}
+
 （2）mds绑定cpu核心调优
 mds服务线程绑定CPU核可以提高缓存命中和充分利用内存的局限性
 语法：
@@ -61,6 +71,10 @@ HASH_RT-按照源端NID哈希分发消息
 ```bash
 $ lctl set_param portal_rotor 
 portal_rotor= { portals: all rotor: ON description: round-robin dispatch all PUT messages for wildcard portals }
+```
+（4）关闭network checksums
+```bash
+lctl set_param -P osc.*.checksums=0/1
 ```
 
 # IO块大小设置
