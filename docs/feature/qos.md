@@ -42,6 +42,8 @@ lctl set_param ost.OSS.ost_io.nrs_policies="tbf nid"
 lctl set_param ost.OSS.ost_io.nrs_tbf_rule="start fast nid={192.168.19.[201-202]@tcp} rate=10000"
 lctl set_param ost.OSS.ost_io.nrs_tbf_rule="start slow nid={192.168.19.[203-210]@tcp} rate=10"
 ```
+tbf也支持其它的，通过nid进行设置的比较简单一些，也比较通用，如果有碰到特殊的用户再根据客户需求定制，一般这个就可以满足了
+
 查看规则
 ```bash
 [root@lab102 ~]# lctl get_param  ost.OSS.ost_io.nrs_tbf_rule
@@ -113,9 +115,19 @@ lctl set_param -P xxxx
 ```
 通过加入参数-P来进行固化，这个在mgs的机器上面操作，因为上面的规则的删除也是通过运行set_param stop操作的，所以删除也是通过这个参数来处理，如果不固化，重启后参数的设置就失效了
 
+开启qos开启的是tbf nid
+如果要完全关闭
+```bash
+lctl set_param -P ost.OSS.ost_io.nrs_policies="fifo"
+```
+就设置为默认的fifo即可
+
+
 
 ## 平台设置建议
 就按lustre本身提供的规则进行处理
-规则名称 规则范围（单个ip，还是一串ip） 设置rate（自己填，默认10000)
+规则名称 规则范围（单个ip，还是一串ip） 设置rate（自己填，默认10000)（需要慢的就填10）
+
+
 
 
