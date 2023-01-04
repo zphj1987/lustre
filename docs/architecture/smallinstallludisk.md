@@ -32,11 +32,6 @@ options lnet networks=tcp0(eth0)
 [root@lab105 ~]# depmod  -a
 [root@lab105 ~]# systemctl restart lustre
 ```
-### 加载zfs模块
-```bash
-modprobe zfs
-genhostid 
-```
 
 ### 配置MGS
 
@@ -78,7 +73,7 @@ Writing CONFIGS/mountdata
 mgs的服务就创建完毕了,后面创建mds和osd的流程和命令基本类似的，只是参数区别
 
 ### 配置MDS
-#### 使用zpool创建mds
+#### 创建mds
 ```bash
 [root@test201 ~]# mkfs.lustre --fsname=lustrefs --mgsnode=192.168.0.201@tcp0  --mdt --index=0  /dev/sdc1
 
