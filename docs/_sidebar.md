@@ -20,6 +20,7 @@
  ** [mds的删除](configure/mdsremove)
  ** [osd的删除](configure/osdremove)
  ** [mirror的配置](configure/mirrorconfig)
+ ** [性能调优](configure/performance)
 
 * lustre的功能特性分析
  ** [lustre读写IO过程](sourcecode/IOprocess)
