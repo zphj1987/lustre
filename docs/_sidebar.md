@@ -29,6 +29,7 @@
  ** [lustre权限控制ACL](feature/fsACL)
  ** [lustre配额管理](feature/quota)
  ** [lustre基于ZFS的快照](feature/ZFS-snapshot)
+ ** [lustre的QOS设置](feature/qos)
  ** [mirror功能的分析]()
  ** [lustre如果做了mirror如何分布的]()
  ** [lustre坏了osd后，如何保证继续使用]()
